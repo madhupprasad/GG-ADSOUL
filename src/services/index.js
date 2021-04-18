@@ -9,3 +9,8 @@ export async function getAllStats() {
   const res = await axios("https://api.npoint.io/d734975d2aee62d197ef");
   return await res;
 }
+
+export async function getStats(id) {
+  const res = await axios(`https://api.npoint.io/d734975d2aee62d197ef/${id}`);
+  return await res;
+}

@@ -52,7 +52,7 @@ export const Card = ({ prop }) => {
           }}
         ></div>
         <div className="heading-flex">
-          <span style={{ fontSize: 28 }}>{prop.appName}</span>
+          <span style={{ fontSize: 24 }}>{prop.appName}</span>
           <span>{prop.publisherName}</span>
         </div>
         <div className="arrow" onClick={() => handleClick(prop)}>
@@ -65,19 +65,19 @@ export const Card = ({ prop }) => {
       <div className="card-bot">
         <div style={{ marginRight: 35 }}>
           <div style={{ fontSize: 14 }}>Revenue</div>
-          <div style={{ fontSize: 30 }}>{util(TotalRevenue)} </div>
+          <div style={{ fontSize: 24 }}>{util(TotalRevenue)} </div>
         </div>
         <div style={{ marginRight: 35 }}>
           <div style={{ fontSize: 14 }}>adResponse</div>
-          <div style={{ fontSize: 30 }}>{util(TotaladResponse)} </div>
+          <div style={{ fontSize: 24 }}>{util(TotaladResponse)} </div>
         </div>
         <div style={{ marginRight: 35 }}>
           <div style={{ fontSize: 14 }}>adRequest</div>
-          <div style={{ fontSize: 30 }}>{util(TotaladRequest)} </div>
+          <div style={{ fontSize: 24 }}>{util(TotaladRequest)} </div>
         </div>
         <div style={{ marginRight: 35 }}>
           <div style={{ fontSize: 14 }}>Impressions</div>
-          <div style={{ fontSize: 30 }}>{util(TotalImpressions)} </div>
+          <div style={{ fontSize: 24 }}>{util(TotalImpressions)} </div>
         </div>
       </div>
     </div>

@@ -91,6 +91,7 @@ const Home = () => {
               </div>
             </div>
           </div>
+          }
         </Col>
         <Col xs={12} lg={6} className="col-2">
           <div className="right-top">

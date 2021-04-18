@@ -10,32 +10,28 @@ import icon3 from "../assets/icon3.svg";
 import icon4 from "../assets/icon4.svg";
 
 import "../styles/Home.css";
-import axios from "axios";
 import { Card } from "./Card";
+import { getAllApps, getAllStats } from "../services";
 
 const Home = () => {
   let allApps = useSelector((state) => state.allApps);
   const dispatch = useDispatch();
+
+  // DATA INITIALIZATION
 
   useEffect(() => {
     const cachedHits = JSON.parse(sessionStorage.getItem("applist"));
     if (cachedHits) {
       dispatch(addAllApps(cachedHits));
     } else {
-      axios
-        .get("https://api.npoint.io/4ca5aaf459a573940672")
-        .then(function (response) {
-          // handle success
-          //   console.log(response);
+      getAllApps()
+        .then((response) => {
+          console.log(response);
           sessionStorage.setItem("applist", JSON.stringify(response.data));
           dispatch(addAllApps(response.data));
         })
         .catch(function (error) {
-          // handle error
           console.log(error);
-        })
-        .then(function () {
-          // always executed
         });
     }
   }, []);
@@ -45,17 +41,14 @@ const Home = () => {
     if (cachedHits) {
       dispatch(addAllStats(cachedHits));
     } else {
-      axios
-        .get("https://api.npoint.io/d734975d2aee62d197ef")
-        .then(function (response) {
-          //   console.log(response);
+      getAllStats()
+        .then((response) => {
           dispatch(addAllStats(response.data));
           sessionStorage.setItem("allstats", JSON.stringify(response.data));
         })
         .catch(function (error) {
           console.log(error);
-        })
-        .then(function () {});
+        });
     }
   }, []);
 
@@ -108,9 +101,8 @@ const Home = () => {
             />
           </div>
           <div className="right-bottom">
-            {allApps.map((item) => (
-              <Card prop={item} key={item.id}></Card>
-            ))}
+            {allApps !== undefined &&
+              allApps.map((item) => <Card prop={item} key={item.id}></Card>)}
           </div>
         </Col>
       </Row>

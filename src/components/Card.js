@@ -11,12 +11,14 @@ export const Card = ({ prop }) => {
   let TotaladRequest = 0;
   let TotalImpressions = 0;
 
-  stats.forEach((data) => {
-    TotalRevenue += data.revenue;
-    TotalImpressions += data.impressions;
-    TotaladRequest += data.adRequest;
-    TotaladResponse += data.adResponse;
-  });
+  if (stats !== undefined) {
+    stats.forEach((data) => {
+      TotalRevenue += data.revenue;
+      TotalImpressions += data.impressions;
+      TotaladRequest += data.adRequest;
+      TotaladResponse += data.adResponse;
+    });
+  }
 
   function util(num) {
     if (num > 1000000) {

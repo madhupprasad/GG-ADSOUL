@@ -1,6 +1,6 @@
-export const addAllData = (data) => {
+export const addAllApps = (data) => {
   return {
-    type: "addAllData",
+    type: "addAllApps",
     payload: data,
   };
 };

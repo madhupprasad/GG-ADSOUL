@@ -65,7 +65,7 @@ export const Card = ({ prop }) => {
       <div className="card-bot">
         <div style={{ marginRight: 35 }}>
           <div style={{ fontSize: 14 }}>Revenue</div>
-          <div style={{ fontSize: 30 }}>{util(TotalRevenue)}$ </div>
+          <div style={{ fontSize: 30 }}>{util(TotalRevenue)} </div>
         </div>
         <div style={{ marginRight: 35 }}>
           <div style={{ fontSize: 14 }}>adResponse</div>

@@ -136,10 +136,6 @@
 }
 
 @media only screen and (max-width: 500px) {
-  .right-top {
-    padding-top: 20px !important;
-    height: 100px;
-  }
   .left-bot {
     height: 100%;
     display: none;

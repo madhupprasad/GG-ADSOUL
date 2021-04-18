@@ -1,9 +1,13 @@
 import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./components/Home";
+import AppDetails from "./components/AppDetails";
 function App() {
   return (
-    <div>
-      <h1>hello</h1>
-    </div>
+    <Router>
+      <Route exact path="/" component={Home}></Route>
+      <Route path="/appdetails/:id" component={AppDetails}></Route>
+    </Router>
   );
 }
 
